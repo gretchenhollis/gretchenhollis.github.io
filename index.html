@@ -3,6 +3,8 @@
 <head>
   <title>Page Title</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap');
+
     body {
       background: linear-gradient(to bottom, silver, black);
       display: flex;
@@ -14,12 +16,15 @@
     }
 
     h1 {
-      font-family: "Roboto Thin", sans-serif;
+      font-family: "Roboto Slab", sans-serif;
+      font-weight: 100;
       font-size: 200px; /* Increase the font size as desired */
       background: linear-gradient(silver, black);
       -webkit-background-clip: text;
       -webkit-text-fill-color: silver;
       text-align: center;
+      -webkit-text-stroke: 1px black;
+      text-stroke: 1px black;
     }
   </style>
 </head>
