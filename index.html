@@ -13,6 +13,7 @@
       height: 100vh;
       margin: 0;
       padding: 0;
+      backdrop-filter: blur(5px);
     }
 
     h1 {
@@ -21,8 +22,9 @@
       font-size: 250px; /* Increase the font size as desired */
       background: -webkit-linear-gradient(top, black, silver, black);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: black;
+      -webkit-text-fill-color: transparent;
       text-align: center;
+      -webkit-text-stroke: 2px black;
     }
   </style>
 </head>
