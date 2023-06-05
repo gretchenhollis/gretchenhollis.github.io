@@ -4,7 +4,7 @@
   <title>Page Title</title>
   <style>
     body {
-      background-color: black;
+      background: linear-gradient(to bottom, silver, black);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,8 +16,11 @@
     h1 {
       font-family: "Roboto Thin", sans-serif;
       font-size: 150px; /* Increase the font size as desired */
-      color: silver;
+      color: white;
       text-align: center;
+      background: -webkit-linear-gradient(silver, black);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
