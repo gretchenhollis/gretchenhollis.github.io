@@ -6,7 +6,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
     body {
-      background: radial-gradient(circle, silver, black);
+      background: radial-gradient(circle at center, silver, black);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -55,10 +55,9 @@
   <script>
     document.addEventListener('mousemove', function(e){
       var body = document.querySelector('body');
-      var x = e.pageX;
-      var y = e.pageY;
-      body.style.backgroundPositionX = x + 'px';
-      body.style.backgroundPositionY = y + 'px';
+      var x = e.pageX/window.innerWidth * 100;
+      var y = e.pageY/window.innerHeight * 100;
+      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, silver, black)`;
     });
   </script>
 </body>
