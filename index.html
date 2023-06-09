@@ -6,7 +6,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
     body {
-      background: radial-gradient(circle at center, silver, black);
+      background: radial-gradient(circle at center, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -41,9 +41,9 @@
       font-family: "Poppins", sans-serif;
       font-weight: 100;
       font-size: 220px;
-      background: -webkit-radial-gradient(circle, black, silver, black);
+      background: -webkit-radial-gradient(circle, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: black;
+      -webkit-text-fill-color: transparent;
       text-align: center;
       animation: pulse 2s ease-in-out infinite;
     }
@@ -57,7 +57,7 @@
       var body = document.querySelector('body');
       var x = e.pageX/window.innerWidth * 100;
       var y = e.pageY/window.innerHeight * 100;
-      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, silver, black)`;
+      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%)`;
     });
   </script>
 </body>
