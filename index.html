@@ -6,7 +6,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
     body {
-      background: radial-gradient(circle, silver, black);
+      background: radial-gradient(circle at center, silver 0%, #8B0000 50%, #000000 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,16 +40,25 @@
     h1 {
       font-family: "Poppins", sans-serif;
       font-weight: 100;
-      font-size: 180px; /* Increase the font size as desired */
-      background: -webkit-radial-gradient(circle at center, silver 0%, #8B0000 50%, #000000 75%, black 100%);
+      font-size: 210;
+      background: -webkit-radial-gradient(circle, silver 0%, #8B0000 50%, #000000 75%, black 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: black;
+      -webkit-text-fill-color: silver;
       text-align: center;
-      animation: pulse 2s ease-in-out infinite; /* Adjust the duration here */
+      animation: pulse 2s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
   <h1>GESTATING</h1>
+  
+  <script>
+    document.addEventListener('mousemove', function(e){
+      var body = document.querySelector('body');
+      var x = e.pageX/window.innerWidth * 100;
+      var y = e.pageY/window.innerHeight * 100;
+      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, silver 0%, #8B0000 50%, #000000 75%, black 100%)`;
+    });
+  </script>
 </body>
 </html>
