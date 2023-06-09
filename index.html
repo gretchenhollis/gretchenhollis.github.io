@@ -5,15 +5,8 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-    @keyframes flow {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 100px; }
-    }
-
     body {
-      background: url('https://link_to_your_lava_texture_image.png');
-      background-size: 200px 200px;
-      animation: flow 5s linear infinite;
+      background: radial-gradient(circle, silver, black);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -48,7 +41,9 @@
       font-family: "Poppins", sans-serif;
       font-weight: 100;
       font-size: 220px;
-      color: rgba(255,255,255,0.8);
+      background: -webkit-radial-gradient(circle, black, silver, black);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: black;
       text-align: center;
       animation: pulse 2s ease-in-out infinite;
     }
@@ -56,5 +51,15 @@
 </head>
 <body>
   <h1>GESTATING</h1>
+  
+  <script>
+    document.addEventListener('mousemove', function(e){
+      var body = document.querySelector('body');
+      var x = e.pageX;
+      var y = e.pageY;
+      body.style.backgroundPositionX = x + 'px';
+      body.style.backgroundPositionY = y + 'px';
+    });
+  </script>
 </body>
 </html>
