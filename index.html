@@ -5,8 +5,15 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
+    @keyframes flow {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 100px; }
+    }
+
     body {
-      background: radial-gradient(circle, silver, black);
+      background: url('https://link_to_your_lava_texture_image.png');
+      background-size: 200px 200px;
+      animation: flow 5s linear infinite;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,12 +47,10 @@
     h1 {
       font-family: "Poppins", sans-serif;
       font-weight: 100;
-      font-size: 220px; /* Increase the font size as desired */
-      background: -webkit-radial-gradient(circle, black, silver, black);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: black;
+      font-size: 220px;
+      color: rgba(255,255,255,0.8);
       text-align: center;
-      animation: pulse 2s ease-in-out infinite; /* Adjust the duration here */
+      animation: pulse 2s ease-in-out infinite;
     }
   </style>
 </head>
