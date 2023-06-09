@@ -6,14 +6,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
     body {
-      background: radial-gradient(circle at center, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%);
+      background: radial-gradient(circle at 50% 50%, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       padding: 0;
-      backdrop-filter: blur(20px);
     }
 
     @keyframes pulse {
@@ -41,9 +40,8 @@
       font-family: "Poppins", sans-serif;
       font-weight: 100;
       font-size: 220px;
-      background: -webkit-radial-gradient(circle, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       text-align: center;
       animation: pulse 2s ease-in-out infinite;
     }
@@ -57,7 +55,9 @@
       var body = document.querySelector('body');
       var x = e.pageX/window.innerWidth * 100;
       var y = e.pageY/window.innerHeight * 100;
-      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #8F8F8F 0%, #4B4B4B 50%, #1C1C1C 75%, black 100%)`;
+      var x2 = 100 - x;
+      var y2 = 100 - y;
+      body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, transparent 0%, black 25%), radial-gradient(circle at ${x2}% ${y2}%, transparent 0%, black 25%)`;
     });
   </script>
 </body>
