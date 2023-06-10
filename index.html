@@ -12,7 +12,6 @@
     }
 
     body {
-      background: radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,7 +19,7 @@
       margin: 0;
       padding: 0;
       backdrop-filter: blur(20px);
-      --silver-color: silver; /* Define a CSS variable for the silver color */
+      overflow: hidden;
     }
 
     @keyframes pulse {
@@ -48,14 +47,10 @@
       font-family: 'NeueHaasDisplayXThin', sans-serif;
       font-weight: 100;
       font-size: 90px; /* Increase the font size as desired */
-      background: -webkit-radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: #8c0809;
+      -webkit-text-fill-color: transparent;
       text-align: center;
       animation: pulse 2s ease-in-out infinite;
-      position: relative;
-      top: 0;
-      left: 0;
     }
   </style>
 </head>
@@ -67,14 +62,14 @@
     var body = document.body;
 
     body.addEventListener('mousemove', function(event) {
-      var rect = centeredText.getBoundingClientRect();
-      var centerX = rect.left + rect.width / 2;
-      var centerY = rect.top + rect.height / 2;
+      var centerX = window.innerWidth / 2;
+      var centerY = window.innerHeight / 2;
       var offsetX = (event.clientX - centerX) / (window.innerWidth / 2);
       var offsetY = (event.clientY - centerY) / (window.innerHeight / 2);
 
-      var silverColor = 'rgb(' + Math.floor(128 + offsetX * 128) + ',' + Math.floor(128 + offsetY * 128) + ',' + 128 + ')';
-      document.documentElement.style.setProperty('--silver-color', silverColor);
+      var silverColor = 'silver';
+      var gradient = 'radial-gradient(circle at ' + offsetX * 100 + '% ' + offsetY * 100 + '%, ' + silverColor + ' 0%, #8B0000 50%, #000000 75%, black 100%)';
+      centeredText.style.backgroundImage = gradient;
     });
   </script>
 </body>
