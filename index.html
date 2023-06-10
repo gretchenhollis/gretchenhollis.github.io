@@ -53,20 +53,23 @@
       -webkit-text-fill-color: #8c0809;
       text-align: center;
       animation: pulse 2s ease-in-out infinite;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
 <body>
-  <h1>GESTATING</h1>
+  <h1 id="centered-text">GESTATING</h1>
 
   <script>
-    document.addEventListener('mousemove', function(event) {
-      var centerX = window.innerWidth / 2;
-      var centerY = window.innerHeight / 2;
+    var centeredText = document.getElementById('centered-text');
+    var body = document.body;
+
+    body.addEventListener('mousemove', function(event) {
+      var rect = centeredText.getBoundingClientRect();
+      var centerX = rect.left + rect.width / 2;
+      var centerY = rect.top + rect.height / 2;
       var offsetX = (event.clientX - centerX) / (window.innerWidth / 2);
       var offsetY = (event.clientY - centerY) / (window.innerHeight / 2);
 
