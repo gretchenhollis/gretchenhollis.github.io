@@ -12,7 +12,7 @@
     }
 
     body {
-      background: radial-gradient(circle at center, silver 0%, #8B0000 50%, #000000 75%, black 100%);
+      background: radial-gradient(circle at center, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,6 +20,7 @@
       margin: 0;
       padding: 0;
       backdrop-filter: blur(20px);
+      --silver-color: silver; /* Define a CSS variable for the silver color */
     }
 
     @keyframes pulse {
@@ -46,8 +47,8 @@
     h1 {
       font-family: 'NeueHaasDisplayXThin', sans-serif;
       font-weight: 100;
-      font-size: 70px; /* Increase the font size as desired */
-      background: -webkit-radial-gradient(circle, silver 0%, #8B0000 50%, #000000 75%, black 100%);
+      font-size: 90px; /* Increase the font size as desired */
+      background: -webkit-radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: #8c0809;
       text-align: center;
@@ -60,7 +61,7 @@
   </style>
 </head>
 <body>
-  <h1 id="centered-text">GESTATING</h1>
+  <h1>GESTATING</h1>
 
   <script>
     document.addEventListener('mousemove', function(event) {
@@ -69,9 +70,8 @@
       var offsetX = event.clientX - centerX;
       var offsetY = event.clientY - centerY;
 
-      var centeredText = document.getElementById('centered-text');
-      centeredText.style.left = centerX + offsetX + 'px';
-      centeredText.style.top = centerY + offsetY + 'px';
+      var silverColor = 'rgb(' + (128 + offsetX) + ',' + (128 + offsetY) + ',' + 128 + ')';
+      document.documentElement.style.setProperty('--silver-color', silverColor);
     });
   </script>
 </body>
