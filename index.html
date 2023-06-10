@@ -70,7 +70,8 @@
       var offsetY = event.clientY - centerY;
 
       var centeredText = document.getElementById('centered-text');
-      centeredText.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px)';
+      centeredText.style.left = centerX + offsetX + 'px';
+      centeredText.style.top = centerY + offsetY + 'px';
     });
   </script>
 </body>
