@@ -12,7 +12,7 @@
     }
 
     body {
-      background: radial-gradient(circle at center, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
+      background: radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -67,10 +67,10 @@
     document.addEventListener('mousemove', function(event) {
       var centerX = window.innerWidth / 2;
       var centerY = window.innerHeight / 2;
-      var offsetX = event.clientX - centerX;
-      var offsetY = event.clientY - centerY;
+      var offsetX = (event.clientX - centerX) / (window.innerWidth / 2);
+      var offsetY = (event.clientY - centerY) / (window.innerHeight / 2);
 
-      var silverColor = 'rgb(' + (128 + offsetX) + ',' + (128 + offsetY) + ',' + 128 + ')';
+      var silverColor = 'rgb(' + (128 + offsetX * 128) + ',' + (128 + offsetY * 128) + ',' + 128 + ')';
       document.documentElement.style.setProperty('--silver-color', silverColor);
     });
   </script>
