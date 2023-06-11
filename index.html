@@ -1,81 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
-  <style>
-    @font-face {
-      font-family: 'NeueHaasDisplayXThin';
-      src: url('path/to/your/NeueHaasDisplayXThin.woff2') format('woff2'),
-           url('path/to/your/NeueHaasDisplayXThin.woff') format('woff');
-      font-weight: 100;
-      font-style: thin;
-    }
-
-    body {
-      background: radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-      backdrop-filter: blur(20px);
-      --silver-color: silver; /* Define a CSS variable for the silver color */
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      10% {
-        transform: scale(1.2);
-      }
-      20% {
-        transform: scale(1);
-      }
-      30% {
-        transform: scale(1.1);
-      }
-      40% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    h1 {
-      font-family: 'NeueHaasDisplayXThin', sans-serif;
-      font-weight: 100;
-      font-size: 90px; /* Increase the font size as desired */
-      background: -webkit-radial-gradient(circle, var(--silver-color) 0%, #8B0000 50%, #000000 75%, black 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: #8c0809;
-      text-align: center;
-      animation: pulse 2s ease-in-out infinite;
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-  </style>
+    <title>Gestating</title>
+    <style>
+        @font-face {
+            font-family: 'NeueHaasDisplayXThin';
+            src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
+                 url('NeueHaasDisplayXThin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: 'NeueHaasDisplayXThin', Arial, sans-serif;
+            font-size: 3em;
+        }
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
-  <h1 id="centered-text">GESTATING</h1>
+    Gestating
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-  <script>
-    var centeredText = document.getElementById('centered-text');
-    var body = document.body;
+        let particlesArray;
 
-    body.addEventListener('mousemove', function(event) {
-      var rect = centeredText.getBoundingClientRect();
-      var centerX = rect.left + rect.width / 2;
-      var centerY = rect.top + rect.height / 2;
-      var offsetX = (event.clientX - centerX) / (window.innerWidth / 2);
-      var offsetY = (event.clientY - centerY) / (window.innerHeight / 2);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-      var silverColor = 'rgb(' + Math.floor(128 + offsetX * 128) + ',' + Math.floor(128 + offsetY * 128) + ',' + 128 + ')';
-      document.documentElement.style.setProperty('--silver-color', silverColor);
-    });
-  </script>
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255,255,255,'+ this.size +')';
+                ctx.strokeStyle = 'rgba(255,255,255,'+ this.size +')';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < 100; i++) {
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                particlesArray.push(new Particle(x, y));
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        canvas.addEventListener('mousemove', function(e) {
+            let x = e.x;
+            let y = e.y;
+            for (let i = 0; i < 5; i++) {
+                particlesArray.push(new Particle(x, y));
+            }
+        });
+    </script>
 </body>
 </html>
