@@ -2,6 +2,14 @@
 <html>
 <head>
     <style>
+        @font-face {
+            font-family: 'NeueHaasDisplayXThin';
+            src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
+                 url('NeueHaasDisplayXThin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             height: 100vh;
             display: flex;
@@ -10,7 +18,7 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at center, #333, #000);
+            background: radial-gradient(circle at center, white, darkred, black);
         }
 
         #particles-js {
@@ -21,11 +29,24 @@
         }
 
         .gestating {
-            font-family: Arial, sans-serif;
+            font-family: 'NeueHaasDisplayXThin', sans-serif;
             color: white;
             font-size: 50px;
             position: relative;
             z-index: 2;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -38,7 +59,7 @@
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 200, // Increased number of particles
+                    "value": 200,
                 },
                 "color": {
                     "value": "#ffffff"
@@ -53,7 +74,7 @@
                     "value": 5,
                 },
                 "line_linked": {
-                    "enable": false, // Disabled lines between particles
+                    "enable": false,
                 },
                 "move": {
                     "enable": true,
