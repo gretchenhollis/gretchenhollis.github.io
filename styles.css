@@ -14,6 +14,7 @@ body {
     justify-content: center;
     background: radial-gradient(circle at center, white, darkred, black);
     overflow-x: hidden; /* Add overflow-x to hide horizontal scrollbar */
+    overflow-y: hidden;
 }
 
 .navigation ul {
