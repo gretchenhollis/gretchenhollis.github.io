@@ -8,12 +8,12 @@
 
 body {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: radial-gradient(circle at center, white, darkred, black);
 }
 
@@ -28,10 +28,7 @@ body {
     font-family: 'NeueHaasDisplayXThin', sans-serif;
     color: #9c2323;
     font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 2;
     animation: pulse 1s infinite;
     text-align: center;
@@ -60,12 +57,12 @@ body {
 }
 
 .navigation {
-    position: absolute;
-    bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: absolute;
+    bottom: 10px;
     z-index: 2;
 }
 
