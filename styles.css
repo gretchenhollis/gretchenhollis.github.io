@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at center, white, darkred, black);
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .navigation ul {
