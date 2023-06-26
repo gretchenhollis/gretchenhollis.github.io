@@ -1,1 +1,47 @@
+@font-face {
+    font-family: 'NeueHaasDisplayXThin';
+    src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
+         url('NeueHaasDisplayXThin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, white, darkred, black);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.gestating {
+    font-family: 'NeueHaasDisplayXThin', sans-serif;
+    color: #9c2323;
+    font-size: 30px;
+    position: relative;
+    z-index: 2;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
