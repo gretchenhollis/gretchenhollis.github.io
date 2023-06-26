@@ -1,108 +1,114 @@
-@font-face {
-    font-family: 'NeueHaasDisplayXThin';
-    src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
-         url('NeueHaasDisplayXThin.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center, white, darkred, black);
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @font-face {
+            font-family: 'NeueHaasDisplayXThin';
+            src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
+                 url('NeueHaasDisplayXThin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-.navigation ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    width: 100%; /* Set width to 100% */
-    margin: 0; /* Remove the default margin */
-}
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y = 0;
+            background: radial-gradient(circle at center, white, darkred, black);
+        }
 
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+        .gestating {
+            font-family: 'NeueHaasDisplayXThin', sans-serif;
+            color: #9c2323;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            animation: pulse 1s infinite;
+            text-align: center;
+        }
 
-.gestating {
-    font-family: 'NeueHaasDisplayXThin', sans-serif;
-    color: #9c2323;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    animation: pulse 1s infinite;
-    text-align: center;
-}
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+        .header {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: 'NeueHaasDisplayXThin', sans-serif;
+            font-size: 40px;
+            color: white;
+            z-index: 2;
+        }
 
-.header {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-family: 'NeueHaasDisplayXThin', sans-serif;
-    font-size: 40px;
-    color: white;
-    z-index: 2;
-}
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+        }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-    z-index: 2;
-}
+        .navigation ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0;
+            margin: 0; /* Remove the default margin */
+            width: 100%; /* Set width to 100% */
+        }
 
-.navigation ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0;
-    margin: 0; /* Remove the default margin */
-    width: 110%; /* Set width to 100% */
-}
+        .navigation ul li {
+            margin: 0 10px;
+        }
 
-.navigation ul li {
-    margin: 0 10px;
-}
+        .navigation ul li a {
+            font-family: 'NeueHaasDisplayXThin', sans-serif;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+            transition: font-weight 0.3s;
+        }
 
-.navigation ul li a {
-    font-family: 'NeueHaasDisplayXThin', sans-serif;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-    transition: font-weight 0.3s;
-}
+        .navigation ul li a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="gestating">GESTATING</div>
 
-.navigation ul li a:hover {
-    font-weight: bold;
-    text-decoration: underline;
-    color: white;
-}
+    <h1 class="header">GRETCHEN HOLLIS</h1> <!-- Updated to use <h1> tag for header -->
+
+    <div class="navigation">
+        <
