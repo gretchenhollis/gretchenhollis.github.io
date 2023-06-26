@@ -48,8 +48,8 @@ body {
 
 .header {
     position: absolute;
-    top: 10px;
-    left: 10px; /* Updated to align text to the left */
+    top: 30px;
+    left: 30px; /* Updated to align text to the left */
     font-family: 'NeueHaasDisplayXThin', sans-serif;
     font-size: 40px;
     color: white;
