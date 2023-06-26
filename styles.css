@@ -69,4 +69,6 @@ body {
 
 .navigation ul li a:hover {
     font-weight: bold;
+    text-decoration: underline;
+    color: white;
 }
