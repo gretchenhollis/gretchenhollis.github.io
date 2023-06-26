@@ -51,11 +51,10 @@ body {
 
 .header {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     font-family: 'NeueHaasDisplayXThin', sans-serif;
     font-size: 40px;
-    font-weight: 2px;
     color: white;
     z-index: 2;
 }
