@@ -7,21 +7,25 @@
 }
 body {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, white, darkred, black);
+    overflow-x: hidden; /* Add overflow-x to hide horizontal scrollbar */
 }
 
 .navigation ul {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     list-style-type: none;
-    height: 100vh;
-    flex-direction: column;
-    background: radial-gradient(circle at center, white, darkred, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%; /* Set width to 100% */
+    margin: 0; /* Remove the default margin */
 }
+
 
 #particles-js {
     position: absolute;
