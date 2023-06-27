@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        @font-face {
-            font-family: 'NeueHaasDisplayXThin';
-            src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
-                 url('NeueHaasDisplayXThin.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
 
-        body {
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at center, white, darkred, black);
-        }
+   <style>
+    @font-face {
+        font-family: 'NeueHaasDisplayXThin';
+        src: url('NeueHaasDisplayXThin.woff2') format('woff2'),
+             url('NeueHaasDisplayXThin.woff') format('woff');
+        font-weight: 60; /* Updated from normal to 100 */
+        font-style: normal;
+    }
+
+    body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Added this line to remove scrollbar */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, white, darkred, black);
+    }
+
+
+
+
+
 
         #particles-js {
             position: absolute;
