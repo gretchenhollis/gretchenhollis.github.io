@@ -55,7 +55,8 @@ body {
     top: 10px;
     left: 20px;
     font-family: 'NeueHaasDisplayXThin', sans-serif;
-    font-size: 10px;
+    font-size: 50px;
+    font-weight: 20px;
     color: white;
     z-index: 2;
 }
